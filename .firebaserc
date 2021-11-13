@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "post-commentaires": {
+      "hosting": {
+        "post-comments": [
+          "post-commentaires"
+        ]
+      }
+    }
+  }
+}
