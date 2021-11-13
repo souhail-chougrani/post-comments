@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="user-info">
+        <div class="user-profile">
+            <img src="./assets/user-default-pecture.PNG" />
+            <span>{{comment?.user_name}}</span>
+        </div>
+        <div class="comment-date">{{formatDate(comment?.createdAt) }}</div>
+    </div>
+    <div class="comment">
+        {{comment?.comment}}
+    </div>
+
+</div>

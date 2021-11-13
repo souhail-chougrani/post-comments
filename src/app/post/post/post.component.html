@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="post">
+        <div class="post-informations">
+            <div class="post-informations-user">post by Souhail</div>
+            <div class="post-informations-time">9 days ago</div>
+        </div>
+        <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus
+            sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus
+            sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus
+            sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus
+            sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+
+        </p>
+    </div>
+    <div class="comments">
+        <div class="add-comment">
+            <div>
+                {{comments?.length}} comments
+            </div>
+            <mat-form-field class="input-field" appearance="outline">
+                <mat-label>Comment*</mat-label>
+                <textarea matInput placeholder="Leave comment" [formControl]="commentForm" [errorStateMatcher]="matcher"
+                    (keyup.enter)="addComment()">
+                </textarea>
+                <mat-error *ngIf="commentForm.hasError('required')">
+                    Required
+                </mat-error>
+                <mat-error *ngIf="commentForm.hasError('maxlength')">
+                    Comment too lang
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="comment-list">
+            <ng-container *ngIf="comments">
+                <ng-container>
+                    <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
+                </ng-container>
+            </ng-container>
+            <div class="load-more" *ngIf="comments?.length >5 && displayMore">
+                <button (click)="display()">load more</button>
+            </div>
+        </div>
+    </div>
+</div>
